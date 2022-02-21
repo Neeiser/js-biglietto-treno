@@ -18,13 +18,13 @@ let userOutput = document.getElementById("user-result");
 if (age >= oldUser) {
     userOutput.innerHTML =
     `Ciao ${userName}. Il costo totale del tuo biglietto è di: 
-    ${(km * ticketPrice)}€`;
+    ${km * ticketPrice}€`;
 
 } else if(age <= youngUser) {
     userOutput.innerHTML =
     `Ciao ${userName}. Il costo totale del tuo biglietto è di: 
     ${km * ticketPrice}€`;
-    
+
 } else {
     userOutput.innerHTML =
     `Ciao ${userName}. Il costo totale del tuo biglietto è di: 
