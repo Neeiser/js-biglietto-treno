@@ -10,10 +10,11 @@ let km= prompt("Inserisci i km");
 let age= prompt("Inserisci la tua età");
 
 /* Variable Declaration: let Operational Result */
-let ticketTotal= km * ticketPrice;
-let ticketOldDiscount= Math.round(ticketTotal*40 / 100);
-let ticketYoungDiscount= Math.round(ticketTotal*20 / 100);
-
+let ticketTotal= (km * ticketPrice).toFixed(2);
+let ticketOldDiscount= (ticketTotal*40 / 100);
+let ticketYoungDiscount= (ticketTotal*20 / 100);
+let ticketOldTotal= (ticketTotal - ticketOldDiscount).toFixed(2)
+let ticketYoungTotal= (ticketTotal - ticketYoungDiscount).toFixed(2)
 /* Variable HTML print */
 let userOutput = document.getElementById("user-result");
 
@@ -22,12 +23,12 @@ let userOutput = document.getElementById("user-result");
 if (age >= oldUser) {
     userOutput.innerHTML =
     `Ciao ${username}. Il costo totale del tuo biglietto è di: 
-    ${ticketTotal - ticketOldDiscount}€`;
+    ${ticketOldTotal}€`;
 
 } else if(age <= youngUser) {
     userOutput.innerHTML =
     `Ciao ${username}. Il costo totale del tuo biglietto è di: 
-    ${ticketTotal - ticketYoungDiscount}€`;
+    ${ticketYoungTotal}€`;
 
 } else {
     userOutput.innerHTML =
